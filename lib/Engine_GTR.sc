@@ -26,7 +26,7 @@ Engine_gtr : CroneEngine {
           var env = Env.new([0,1, 1, 0],[0.001,0.006, 0.0005],[5,-5, -8]);
           var inp = amp * LFClipNoise.ar(2000) * EnvGen.ar(env,1);
           var son = DWGPlucked.ar(freq, amp, 1,0.1,1,c3,inp);
-    	  var mx = (son  ) * 0.1;
+    	  var mx = (son  ) * 0.02;
           DetectSilence.ar(son , 0.001, doneAction:2);
     	  Out.ar(bus, Pan2.ar( mx, pan));
         }).add;
